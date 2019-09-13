@@ -10,7 +10,8 @@ function addResource(resource){
 }
 
 function getProjects(){
-    return db('projects');
+    return db('projects')
+    .then(projects => projects.map(project => { return {...project, completed: (project.completed==1)}}));
 }
 
 function addProject(project){
@@ -19,7 +20,9 @@ function addProject(project){
 
 function getTasks(){
     return db('tasks').join('projects', 'projects.id', '=', 'project_id')
-    .select ('id', 'projects.name', 'projects.description', 'tasks.description', 'tasks.notes', 'tasks.completed');
+    .select ({id: 'tasks.id', project_name: 'projects.name', project_description: 'projects.description',
+     description: 'tasks.description', notes: 'tasks.notes', completed: 'tasks.completed'})
+     .then(tasks => tasks.map(task => { return {...task, completed: (task.completed==1)}}));
 }
 
 function addTask(task){
