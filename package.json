@@ -1,0 +1,29 @@
+{
+  "name": "node-db-challenge-private",
+  "version": "1.0.0",
+  "description": "Node DB Challenge Private",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlaMarvin78/node-db-challenge-private.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarlaMarvin78/node-db-challenge-private/issues"
+  },
+  "homepage": "https://github.com/CarlaMarvin78/node-db-challenge-private#readme",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "knex": "^0.19.4",
+    "sqlite3": "^4.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}
